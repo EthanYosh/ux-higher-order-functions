@@ -1,0 +1,19 @@
+*, *::before,*::after {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+  }
+  
+  html {
+    font-size: 62.5%; /* good practice because makes math easier when using rem*/
+  }
+  
+  
+  body {
+    padding: 50px;
+    margin: 0;
+    background-image: linear-gradient(to bottom, #00FFFF, #66CDAA);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* fixed doesnt scroll with the page, local will scroll with page contents, scroll is default and will scroll with the page */
+    background-position: center;
+  
+  }

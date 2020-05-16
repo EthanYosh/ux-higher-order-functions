@@ -53,34 +53,31 @@ let products = [
 let chosenDepartment = "";
 
 function renderProducts() {
-  let html = ""; // Your code here!
-  /*
-    using the product array
+  let html = "";
+  html = products.filter(function (product) 
+  {return product.quantity > 0;})
 
-    Perform a filter, a map, and a reduce function. (Just like in the reading!)
 
-    The html you create for each item should have:
-    an outer <li>
-    an <h3> title of the item
-    and a price
+.filter(function (product) 
+{return (chosenDepartment) ? product.department === chosenDepartment : true})
 
-    There are two filters to be applied!
-    First, do not show out of stock items! If the quantity is zero then
-    do not display the item.
 
-    Secondly, you have to apply the filter.  
-    The Buttons are already wired up, so when you click a button it will 
-    set chosenDepartment.  If the item's department matches the 
-    chosenDepartment, then display it.
+.map(function (product) 
+{return `
 
-    But watch out for the showAll case! If the chosenDepartment is blank,
-    then you should show all items!  (That are in stock, of course)
+        <li>
+            <h3>${product.name}</h3>
+            <div>Price: $${product.price}</div>
+        </li>
 
-    Hint: You can do this within one filter function, or you can have 
-    multiple filter functions!  This can be very cleanly done with two 
-    filter functions, one for checking if it's in stock, the other for checking
-    the chosenDepartment.
-    */
+        `})
+
+
+
+.reduce(function (content, item) 
+{  return content + item;});
+
+
 
   let elem = document.getElementById("productList");
   elem.innerHTML = html;
